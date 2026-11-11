@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#9663b5">
+<title>Rosy Cosméticos</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #eee4f6;
+    color: #493253;
+}
+
+.app {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: auto;
+    background: #fbf8ff;
+    position: relative;
+    padding-bottom: 85px;
+    overflow: hidden;
+    box-shadow: 0 0 25px #74528a22;
+}
+
+/* CABECERA */
+
+.header {
+    background: linear-gradient(135deg,#8752a6,#c59be0);
+    color: white;
+    padding: 22px 18px;
+    border-radius: 0 0 28px 28px;
+}
+
+.logo {
+    font-family: Georgia,serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 11px;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+/* PORTADA */
+
+.hero {
+    margin: 15px;
+    min-height: 245px;
+    padding: 24px 18px;
+    border-radius: 22px;
+    background:
+    linear-gradient(#613c7080,#613c7080),
+    url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700")
+    center/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-family: Georgia,serif;
+    font-size: 29px;
+    max-width: 270px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 270px;
+}
+
+.btn {
+    background: linear-gradient(120deg,#9254ae,#c38cda);
+    border: none;
+    color: white;
+    border-radius: 25px;
+    padding: 12px 17px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 14px;
+}
+
+.hero .btn {
+    background: white;
+    color: #8852a3;
+    align-self: flex-start;
+}
+
+/* CONTENIDO */
+
+.section {
+    padding: 17px;
+}
+
+.section h2 {
+    font-family: Georgia,serif;
+    font-size: 21px;
+    color: #70458b;
+    margin-bottom: 7px;
+}
+
+.subtitle {
+    font-size: 11px;
+    color: #9c88a6;
+    margin-bottom: 15px;
+}
+
+/* CATEGORIAS */
+
+.categories {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 5px 0 13px;
+    scrollbar-width: none;
+}
+
+.categories button {
+    border: 1px solid #dfcbe9;
+    background: white;
+    color: #825895;
+    border-radius: 20px;
+    padding: 9px 14px;
+    white-space: nowrap;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.categories button.active {
+    background: #9563b1;
+    color: white;
+}
+
+/* PRODUCTOS */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 12px;
+}
+
+.product {
+    background: white;
+    border-radius: 16px;
+    padding: 8px;
+    box-shadow: 0 4px 15px #67407912;
+}
+
+.product img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #eadcf1;
+}
+
+.product h3 {
+    font-size: 12px;
+    margin: 8px 2px 5px;
+}
+
+.product p {
+    color: #9a85a4;
+    font-size: 10px;
+    min-height: 28px;
+    line-height: 1.4;
+}
+
+.price {
+    font-weight: bold;
+    color: #945bad;
+    margin: 8px 2px;
+    font-size: 14px;
+}
+
+.product .btn {
+    width: 100%;
+    padding: 10px 5px;
+    margin: 0;
+    font-size: 10px;
+}
+
+/* CARRITO */
+
+.cart-item {
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 13px;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.cart-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cart-info strong {
+    font-size: 12px;
+}
+
+.cart-info small {
+    display: block;
+    color: #987fa3;
+    margin-top: 5px;
+    font-size: 10px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 7px;
+}
+
+.quantity button {
+    background: #f0e4f6;
+    border: none;
+    color: #805095;
+    border-radius: 7px;
+    width: 24px;
+    height: 24px;
+}
+
+.delete {
+    background: transparent;
+    color: #c16d9b;
+    border: none;
+    font-size: 17px;
+}
+
+.total {
+    background: #f0e4f7;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #77468f;
+    margin-top: 15px;
+}
+
+.full {
+    width: 100%;
+}
+
+/* FORMULARIO */
+
+.form-group {
+    margin: 13px 0;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    color: #76547f;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dfcce9;
+    border-radius: 10px;
+    background: white;
+    outline: none;
+    font-size: 12px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    min-height: 75px;
+}
+
+.empty {
+    text-align: center;
+    padding: 45px 15px;
+    color: #987fa5;
+    font-size: 13px;
+}
+
+.empty span {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* CONFIRMACION */
+
+.success {
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.success h2 {
+    font-family: Georgia,serif;
+    color: #8d58a7;
+    margin: 15px 0;
+}
+
+.receipt {
+    background: #f1e6f7;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 15px 0;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* NAVEGACION INFERIOR */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 430px;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 11px 4px 14px;
+    box-shadow: 0 -3px 15px #68407818;
+    z-index: 10;
+}
+
+.bottom-nav button {
+    background: none;
+    border: none;
+    color: #9c88a5;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.bottom-nav button span {
+    font-size: 21px;
+}
+
+.bottom-nav button.active {
+    color: #9256aa;
+    font-weight: bold;
+}
+
+.badge {
+    background: #e9d7f2;
+    color: #7b4a91;
+    border-radius: 20px;
+    padding: 2px 6px;
+    font-size: 9px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+footer {
+    text-align: center;
+    background: #f0e4f7;
+    color: #906c9e;
+    padding: 20px;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+@media(min-width:431px) {
+    .app {
+        border-radius: 20px;
+    }
+    .bottom-nav {
+        border-radius: 15px 15px 0 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- INICIO -->
+
+<div id="home" class="page active">
+
+<header class="header">
+    <div class="logo">🌸 Rosy Cosméticos</div>
+    <p>BELLEZA · ESTILO · ELEGANCIA</p>
+</header>
+
+<div class="hero">
+    <h1>Tu belleza, tu mejor versión ✨</h1>
+    <p>
+        Descubre productos especiales para resaltar
+        tu belleza y cuidar de ti todos los días.
+    </p>
+    <button class="btn" onclick="go('catalog')">
+        COMPRAR AHORA →
+    </button>
+</div>
+
+<div class="section">
+    <h2>¡Bienvenida a Rosy! 💜</h2>
+    <p class="subtitle">
+        Un espacio creado especialmente para ti.
+        Encuentra todo lo que necesitas para lucir hermosa.
+    </p>
+</div>
+
+<div class="section" id="catalogSection">
+    <h2>✨ Nuestros productos</h2>
+    <p class="subtitle">Descubre nuestra colección</p>
+
+    <div class="categories" id="categories"></div>
+
+    <div class="products" id="products"></div>
+</div>
+
+<footer>
+    🌸 Rosy Cosméticos<br>
+    Tu belleza, nuestra inspiración 💜<br>
+    © 2026 Todos los derechos reservados
+</footer>
+
+</div>
+
+<!-- CARRITO -->
+
+<div id="cart" class="page">
+
+<div class="section">
+    <h2>🛍️ Mi carrito</h2>
+    <p class="subtitle">Tus productos favoritos</p>
+
+    <div id="cartItems"></div>
+
+    <div id="cartTotal"></div>
+
+    <button class="btn full" id="checkoutBtn" onclick="go('checkout')">
+        CONTINUAR CON MI PEDIDO →
+    </button>
+</div>
+
+</div>
+
+<!-- PEDIDO -->
+
+<div id="checkout" class="page">
+
+<div class="section">
+    <h2>💜 Finalizar pedido</h2>
+    <p class="subtitle">Completa tus datos personales</p>
+
+    <div class="form-group">
+        <label>Nombre completo *</label>
+        <input type="text" id="name" placeholder="Tus nombres y apellidos" required>
+    </div>
+
+    <div class="form-group">
+        <label>Teléfono / WhatsApp *</label>
+        <input type="tel" id="phone" placeholder="Tu número de celular" required>
+    </div>
+
+    <div class="form-group">
+        <label>Dirección de entrega *</label>
+        <input type="text" id="address" placeholder="Tu dirección" required>
+    </div>
+
+    <div class="form-group">
+        <label>Ciudad o distrito *</label>
+        <input type="text" id="city" placeholder="Tu ciudad" required>
+    </div>
+
+    <div class="form-group">
+        <label>Método de pago</label>
+        <select id="payment">
+            <option>Yape / Plin</option>
+            <option>Transferencia bancaria</option>
+            <option>Pago contra entrega</option>
+            <option>Efectivo</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Indicaciones adicionales</label>
+        <textarea id="notes" placeholder="Escribe alguna indicación..."></textarea>
+    </div>
+
+    <div id="checkoutTotal" class="total"></div>
+
+    <button class="btn full" onclick="confirmOrder()">
+        CONFIRMAR MI PEDIDO 💜
+    </button>
+</div>
+
+</div>
+
+<!-- CONFIRMACION -->
+
+<div id="success" class="page">
+
+<div class="success">
+    <div style="font-size:60px">💜🌸</div>
+
+    <h2>¡Gracias por tu compra!</h2>
+
+    <p class="subtitle">
+        Tu pedido ha sido registrado en esta demostración.
+    </p>
+
+    <div id="receipt" class="receipt"></div>
+
+    <button class="btn full" onclick="resetShop()">
+        VOLVER A LA TIENDA
+    </button>
+</div>
+
+</div>
+
+<!-- MENU INFERIOR -->
+
+<nav class="bottom-nav">
+
+    <button class="active" id="navHome" onclick="go('home')">
+        <span>⌂</span>
+        Inicio
+    </button>
+
+    <button id="navCatalog" onclick="go('home');setTimeout(()=>document.getElementById('catalogSection').scrollIntoView({behavior:'smooth'}),100)">
+        <span>♡</span>
+        Catálogo
+    </button>
+
+    <button id="navCart" onclick="go('cart')">
+        <span>🛍️</span>
+        Carrito
+        <small class="badge" id="badge">0</small>
+    </button>
+
+</nav>
+
+</div>
+
+<script>
+
+// PRODUCTOS
+
+const products = [
+
+{
+id:1,
+name:"Labial Velvet Rose",
+description:"Labial de larga duración y acabado mate.",
+price:25,
+category:"Maquillaje",
+image:"https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500"
+},
+
+{
+id:2,
+name:"Paleta de sombras",
+description:"Hermosos tonos para cada ocasión.",
+price:45,
+category:"Maquillaje",
+image:"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500"
+},
+
+{
+id:3,
+name:"Crema hidratante",
+description:"Hidratación y cuidado para tu rostro.",
+price:38,
+category:"Cuidado facial",
+image:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500"
+},
+
+{
+id:4,
+name:"Perfume floral",
+description:"Fragancia delicada y femenina.",
+price:65,
+category:"Perfumes",
+image:"https://images.unsplash.com/photo-1541643600914-78b084683601?w=500"
+},
+
+{
+id:5,
+name:"Set de brochas",
+description:"Brochas ideales para maquillarte.",
+price:35,
+category:"Accesorios",
+image:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500"
+},
+
+{
+id:6,
+name:"Serum facial",
+description:"Cuida tu piel todos los días.",
+price:42,
+category:"Cuidado facial",
+image:"https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=500"
+},
+
+{
+id:7,
+name:"Base de maquillaje",
+description:"Acabado natural para tu piel.",
+price:32,
+category:"Maquillaje",
+image:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500"
+},
+
+{
+id:8,
+name:"Perfume elegante",
+description:"Una fragancia para ocasiones especiales.",
+price:75,
+category:"Perfumes",
+image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?w=500"
+}
+
+];
+
+// CARRITO
+
+let cart = [];
+
+let currentCategory = "Todos";
+
+const money = n => "S/ " + n.toFixed(2);
+
+// CATEGORIAS
+
+function renderCategories() {
+
+const categories = [
+"Todos",
+"Maquillaje",
+"Cuidado facial",
+"Perfumes",
+"Accesorios"
+];
+
+document.getElementById("categories").innerHTML =
+categories.map(c => `
+<button class="${currentCategory===c?'active':''}"
+onclick="filterProducts('${c}')">
+${c}
+</button>
+`).join("");
+
+}
+
+// CATALOGO
+
+function renderProducts() {
+
+const filtered = currentCategory === "Todos"
+? products
+: products.filter(p => p.category === currentCategory);
+
+document.getElementById("products").innerHTML =
+filtered.map(p => `
+
+<div class="product">
+
+<img src="${p.image}" alt="${p.name}" loading="lazy">
+
+<h3>${p.name}</h3>
+
+<p>${p.description}</p>
+
+<div class="price">${money(p.price)}</div>
+
+<button class="btn" onclick="addToCart(${p.id})">
+＋ Agregar
+</button>
+
+</div>
+
+`).join("");
+
+}
+
+function filterProducts(category) {
+currentCategory = category;
+renderCategories();
+renderProducts();
+}
+
+// AGREGAR
+
+function addToCart(id) {
+
+const product = products.find(p => p.id === id);
+
+const found = cart.find(p => p.id === id);
+
+if(found) {
+found.quantity++;
+} else {
+cart.push({...product,quantity:1});
+}
+
+renderCart();
+
+alert("¡Producto agregado al carrito! 💜");
+
+}
+
+// TOTAL
+
+function getTotal() {
+return cart.reduce(
+(total,p) => total + p.price * p.quantity,
+0
+);
+}
+
+// MOSTRAR CARRITO
+
+function renderCart() {
+
+const container = document.getElementById("cartItems");
+
+document.getElementById("badge").textContent =
+cart.reduce((sum,p)=>sum+p.quantity,0);
+
+if(cart.length === 0) {
+
+container.innerHTML = `
+<div class="empty">
+<span>🛍️</span>
+Tu carrito está vacío.<br>
+¡Agrega tus productos favoritos!
+</div>`;
+
+document.getElementById("cartTotal").innerHTML = "";
+
+document.getElementById("checkoutBtn").style.display = "none";
+
+return;
+
+}
+
+document.getElementById("checkoutBtn").style.display = "block";
+
+container.innerHTML = cart.map(p => `
+
+<div class="cart-item">
+
+<img src="${p.image}" alt="${p.name}">
+
+<div class="cart-info">
+
+<strong>${p.name}</strong>
+
+<small>${money(p.price)} por unidad</small>
+
+<div class="quantity">
+
+<button onclick="changeQuantity(${p.id},-1)">−</button>
+
+<b>${p.quantity}</b>
+
+<button onclick="changeQuantity(${p.id},1)">+</button>
+
+</div>
+
+</div>
+
+<button class="delete"
+onclick="removeProduct(${p.id})">
+✕
+</button>
+
+</div>
+
+`).join("");
+
+document.getElementById("cartTotal").innerHTML = `
+<div class="total">
+<span>Total de compra</span>
+<span>${money(getTotal())}</span>
+</div>
+`;
+
+}
+
+// CAMBIAR CANTIDAD
+
+function changeQuantity(id,change) {
+
+const p = cart.find(p => p.id === id);
+
+if(!p) return;
+
+p.quantity += change;
+
+if(p.quantity <= 0) {
+removeProduct(id);
+} else {
+renderCart();
+}
+
+}
+
+// ELIMINAR
+
+function removeProduct(id) {
+
+cart = cart.filter(p => p.id !== id);
+
+renderCart();
+
+}
+
+// CAMBIAR PAGINA
+
+function go(page) {
+
+document.querySelectorAll(".page").forEach(p => {
+p.classList.remove("active");
+});
+
+document.getElementById(page).classList.add("active");
+
+document.querySelectorAll(".bottom-nav button").forEach(b => {
+b.classList.remove("active");
+});
+
+if(page === "home") {
+document.getElementById("navHome").classList.add("active");
+}
+
+if(page === "cart") {
+document.getElementById("navCart").classList.add("active");
+renderCart();
+}
+
+if(page === "checkout") {
+
+if(cart.length === 0) {
+alert("Tu carrito está vacío.");
+go("cart");
+return;
+}
+
+document.getElementById("checkoutTotal").innerHTML =
+`Total a pagar: ${money(getTotal())}`;
+
+}
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+// CONFIRMAR PEDIDO
+
+function escapeHTML(value) {
+
+return String(value).replace(/[&<>"']/g,c => ({
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#039;"
+})[c]);
+
+}
+
+function confirmOrder() {
+
+const name = document.getElementById("name").value.trim();
+const phone = document.getElementById("phone").value.trim();
+const address = document.getElementById("address").value.trim();
+const city = document.getElementById("city").value.trim();
+const payment = document.getElementById("payment").value;
+const notes = document.getElementById("notes").value;
+
+if(cart.length === 0) {
+alert("Tu carrito está vacío.");
+return;
+}
+
+if(!name || !phone || !address || !city) {
+alert("Completa todos los datos obligatorios.");
+return;
+}
+
+let detail = "";
+
+cart.forEach(p => {
+
+detail += `
+<p>${escapeHTML(p.name)} x ${p.quantity}
+= ${money(p.price*p.quantity)}</p>
+`;
+
+});
+
+const receipt = `
+
+<h3>🌸 ROSY COSMÉTICOS</h3>
+
+<p><b>Cliente:</b> ${escapeHTML(name)}</p>
+
+<p><b>Teléfono:</b> ${escapeHTML(phone)}</p>
+
+<p><b>Dirección:</b> ${escapeHTML(address)}</p>
+
+<p><b>Ciudad:</b> ${escapeHTML(city)}</p>
+
+<hr>
+
+<h4>Productos:</h4>
+
+${detail}
+
+<hr>
+
+<p><b>Pago:</b> ${escapeHTML(payment)}</p>
+
+<p><b>Observaciones:</b> ${escapeHTML(notes || "Ninguna")}</p>
+
+<h3>TOTAL: ${money(getTotal())}</h3>
+
+`;
+
+document.getElementById("receipt").innerHTML = receipt;
+
+go("success");
+
+}
+
+// VOLVER A COMPRAR
+
+function resetShop() {
+
+cart = [];
+
+document.getElementById("name").value = "";
+document.getElementById("phone").value = "";
+document.getElementById("address").value = "";
+document.getElementById("city").value = "";
+document.getElementById("notes").value = "";
+
+renderCart();
+
+go("home");
+
+}
+
+// INICIAR APLICACION
+
+renderCategories();
+renderProducts();
+renderCart();
+
+</script>
+
+</body>
+</html>
